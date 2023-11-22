@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ProductManage.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["InfoMessage"] != null)
+{<div class="alert alert-info">
+        <strong>Information = </strong>
+        @TempData["InfoMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>X</span>
+        </button>
+    </div>
+}
+else if (TempData["SuccessMessage"] != null)
+{<div class="alert alert-success">
+        <strong>Success !!= </strong>
+        @TempData["SuccessMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>X</span>
+        </button>
+    </div>
+}
+else if (TempData["ErrorMessage"] != null)
+{<div class="alert alert-danger">
+        <strong>Error!!= </strong>
+        @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>X</span>
+        </button>
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New Product", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div>
+    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+    {
+        <table>
+            <tr>
+                <td><span><b>Search By :</b></span> @Html.RadioButton("SearchBy", "ProductName") ProductName @Html.RadioButton("SearchBy", "Price") Price</td>
+            </tr>
+            <tr>
+                <td>@Html.TextBox("searchValue", null, new { Class = "form-control", placeholder = "Enter ProductName or Price" })</td>
+                <td><input type="submit" value="Search" class="btn btn-success"></td>
+            </tr>
+        </table>}
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qnty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qnty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn btn-primary" })  &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }, new { @class = "btn btn-success" }) &nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<p><a href="https://localhost:44385/Report/ReportViewer.aspx" class="btn btn-info btn-md">Report &raquo;</a></p>
