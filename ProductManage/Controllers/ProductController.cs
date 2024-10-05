@@ -8,8 +8,10 @@ using System.Web.Mvc;
 
 namespace ProductManage.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
+        
 
         Product_DAL product_DAL=new Product_DAL();
         // GET: Admin

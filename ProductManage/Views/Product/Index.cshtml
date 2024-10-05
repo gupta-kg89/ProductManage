@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Products</h2>
 @if (TempData["InfoMessage"] != null)
 {<div class="alert alert-info">
         <strong>Information = </strong>
@@ -62,8 +62,7 @@ else if (TempData["ErrorMessage"] != null)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Remarks)
-        </th>
-        <th></th>
+        </th>       
     </tr>
 
     @foreach (var item in Model)
@@ -85,8 +84,7 @@ else if (TempData["ErrorMessage"] != null)
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn btn-primary" })  &nbsp;&nbsp;&nbsp;&nbsp;
                 @Html.ActionLink("Details", "Details", new { id = item.ProductID }, new { @class = "btn btn-success" }) &nbsp;&nbsp;&nbsp;&nbsp;
                 @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
+            </td>        
     }
 
 </table>

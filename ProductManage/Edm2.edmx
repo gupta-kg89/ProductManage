@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GarageSystemJaipurModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'GarageSystemJaipur.dbo.MstUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MstUser">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityCode" Type="int" />
+          <Property Name="OrgCode" Type="int" />
+          <Property Name="UserCode" Type="int" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="FatherName" Type="varchar" MaxLength="50" />
+          <Property Name="Addr" Type="varchar" MaxLength="100" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+          <Property Name="EmailId" Type="varchar" MaxLength="40" />
+          <Property Name="DOB" Type="smalldatetime" />
+          <Property Name="CreationDate" Type="smalldatetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PassWord" Type="varchar(max)" />
+          <Property Name="ActivInd" Type="smallint" />
+          <Property Name="LevelInd" Type="int" />
+          <Property Name="CorpNameE" Type="varchar" MaxLength="100" />
+          <Property Name="CorpNameH" Type="nvarchar" MaxLength="200" />
+          <Property Name="ZoneCode" Type="int" />
+          <Property Name="WardCode" Type="int" />
+          <Property Name="GarageCode" Type="int" />
+          <Property Name="IPPassword" Type="varbinary(max)" />
+          <Property Name="SaltKey" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="GarageSystemJaipurModelStoreContainer">
+          <EntitySet Name="MstUser" EntityType="Self.MstUser" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MstUser].[Id] AS [Id], 
+    [MstUser].[CityCode] AS [CityCode], 
+    [MstUser].[OrgCode] AS [OrgCode], 
+    [MstUser].[UserCode] AS [UserCode], 
+    [MstUser].[FirstName] AS [FirstName], 
+    [MstUser].[LastName] AS [LastName], 
+    [MstUser].[FatherName] AS [FatherName], 
+    [MstUser].[Addr] AS [Addr], 
+    [MstUser].[MobileNo] AS [MobileNo], 
+    [MstUser].[EmailId] AS [EmailId], 
+    [MstUser].[DOB] AS [DOB], 
+    [MstUser].[CreationDate] AS [CreationDate], 
+    [MstUser].[UserName] AS [UserName], 
+    [MstUser].[PassWord] AS [PassWord], 
+    [MstUser].[ActivInd] AS [ActivInd], 
+    [MstUser].[LevelInd] AS [LevelInd], 
+    [MstUser].[CorpNameE] AS [CorpNameE], 
+    [MstUser].[CorpNameH] AS [CorpNameH], 
+    [MstUser].[ZoneCode] AS [ZoneCode], 
+    [MstUser].[WardCode] AS [WardCode], 
+    [MstUser].[GarageCode] AS [GarageCode], 
+    [MstUser].[IPPassword] AS [IPPassword], 
+    [MstUser].[SaltKey] AS [SaltKey]
+    FROM [dbo].[MstUser] AS [MstUser]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GarageSystemJaipurModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MstUser">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityCode" Type="Int32" />
+          <Property Name="OrgCode" Type="Int32" />
+          <Property Name="UserCode" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Addr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="CreationDate" Type="DateTime" Precision="0" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PassWord" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivInd" Type="Int16" />
+          <Property Name="LevelInd" Type="Int32" />
+          <Property Name="CorpNameE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CorpNameH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneCode" Type="Int32" />
+          <Property Name="WardCode" Type="Int32" />
+          <Property Name="GarageCode" Type="Int32" />
+          <Property Name="IPPassword" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="SaltKey" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="GarageSystemJaipurEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MstUsers" EntityType="Self.MstUser" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GarageSystemJaipurModelStoreContainer" CdmEntityContainer="GarageSystemJaipurEntities">
+          <EntitySetMapping Name="MstUsers">
+            <EntityTypeMapping TypeName="GarageSystemJaipurModel.MstUser">
+              <MappingFragment StoreEntitySet="MstUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Addr" ColumnName="Addr" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="ActivInd" ColumnName="ActivInd" />
+                <ScalarProperty Name="LevelInd" ColumnName="LevelInd" />
+                <ScalarProperty Name="CorpNameE" ColumnName="CorpNameE" />
+                <ScalarProperty Name="CorpNameH" ColumnName="CorpNameH" />
+                <ScalarProperty Name="ZoneCode" ColumnName="ZoneCode" />
+                <ScalarProperty Name="WardCode" ColumnName="WardCode" />
+                <ScalarProperty Name="GarageCode" ColumnName="GarageCode" />
+                <ScalarProperty Name="IPPassword" ColumnName="IPPassword" />
+                <ScalarProperty Name="SaltKey" ColumnName="SaltKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
